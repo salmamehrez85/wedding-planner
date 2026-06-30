@@ -237,7 +237,7 @@ function App() {
                 </button>
                 <button 
                   onClick={() => setCurrentPage('timeline')}
-                  className={`pb-1 transition-all duration-250 cursor-pointer ${
+                  className={`pb-1 transition-all duration-250 cursor-pointer mr-10 ${
                     currentPage === 'timeline' 
                       ? 'text-brand-600 border-b-2 border-brand-500 font-extrabold' 
                       : 'text-brand-800 hover:text-brand-500'
@@ -451,7 +451,7 @@ function App() {
               <section id="timeline" className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 border-b border-brand-200/40">
                 <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
                   <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-brand-500 font-bold">برنامج العمل الميداني</span>
-                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">جدول المساعدة في تحضيرات المناسبة</h2>
+                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950 mr-5">جدول المساعدة في تحضيرات المناسبة</h2>
                   <p className="text-brand-700 font-light text-sm">خطوة بخطوة كيف نقوم بإدارة وتنسيق ليلتكم من العصر وحتى تأمين آخر غرض بعد العشاء.</p>
                 </div>
 
@@ -566,6 +566,13 @@ function App() {
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
                             <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center text-brand-300 text-lg border border-brand-800">📸</div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
+                            <a href="https://instagram.com/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -707,7 +714,7 @@ function App() {
             </button>
             <button 
               onClick={() => setCurrentPage('timeline')}
-              className={`hover:text-brand-950 transition-colors cursor-pointer ${currentPage === 'timeline' ? 'text-brand-900 underline underline-offset-4' : ''}`}
+              className={`hover:text-brand-950 transition-colors cursor-pointer mr-10 ${currentPage === 'timeline' ? 'text-brand-900 underline underline-offset-4' : ''}`}
             >
               جدول المناسبة
             </button>
