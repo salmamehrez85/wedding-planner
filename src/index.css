@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  /* Elegant Warm Terracotta & Peach color scheme */
+  --color-brand-50: #fdfbf7;
+  --color-brand-100: #f9f5ed;
+  --color-brand-200: #efe5d4;
+  --color-brand-300: #dfccb1;
+  --color-brand-400: #caa788;
+  --color-brand-500: #b58463;
+  --color-brand-600: #996849;
+  --color-brand-700: #7c5139;
+  --color-brand-800: #62402e;
+  --color-brand-900: #4f3527;
+  --color-brand-950: #291a13;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-950);
+}
