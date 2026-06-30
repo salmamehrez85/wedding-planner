@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Tajawal:wght@200..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Playfair Display", serif;
-  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-serif: "El Messiri", serif;
+  --font-sans: "Tajawal", sans-serif;
 
-  /* Elegant Warm Terracotta & Peach color scheme */
-  --color-brand-50: #fdfbf7;
-  --color-brand-100: #f9f5ed;
-  --color-brand-200: #efe5d4;
-  --color-brand-300: #dfccb1;
-  --color-brand-400: #caa788;
-  --color-brand-500: #b58463;
-  --color-brand-600: #996849;
-  --color-brand-700: #7c5139;
-  --color-brand-800: #62402e;
-  --color-brand-900: #4f3527;
-  --color-brand-950: #291a13;
+  /* Luxury Warm Bronze, Gold & Cream color palette */
+  --color-brand-50: #fcfaf6;
+  --color-brand-100: #f6f0e2;
+  --color-brand-200: #ecdcb9;
+  --color-brand-300: #dec48b;
+  --color-brand-400: #cca65f;
+  --color-brand-500: #b78a3c;
+  --color-brand-600: #9c702d;
+  --color-brand-700: #7d5724;
+  --color-brand-800: #63431f;
+  --color-brand-900: #50361b;
+  --color-brand-950: #291a0c;
 }
 
 body {
