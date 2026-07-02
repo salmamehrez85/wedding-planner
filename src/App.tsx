@@ -249,7 +249,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       : 'text-brand-800 hover:text-brand-500'
                   }`}
                 >
-                  الرئيسية والتواصل
+                  الرئيسية
                 </button>
                 <button 
                   onClick={() => setCurrentPage('packages')}
@@ -259,7 +259,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       : 'text-brand-800 hover:text-brand-500'
                   }`}
                 >
-                  باقاتنا وخدماتنا
+                  خدماتنا
                 </button>
                 <button 
                   onClick={() => setCurrentPage('timeline')}
@@ -269,7 +269,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       : 'text-brand-800 hover:text-brand-500'
                   }`}
                 >
-                  جدول المناسبة والعدّة
+                  جدول المناسبة
                 </button>
               </div>
 
@@ -302,19 +302,19 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                 onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); }}
                 className={`block w-full text-right px-3 py-2.5 rounded-md text-base font-semibold ${currentPage === 'home' ? 'bg-brand-100 text-brand-700 font-bold' : 'text-brand-800 hover:bg-brand-100'}`}
               >
-                الرئيسية والتواصل
+                الرئيسية
               </button>
               <button 
                 onClick={() => { setCurrentPage('packages'); setMobileMenuOpen(false); }}
                 className={`block w-full text-right px-3 py-2.5 rounded-md text-base font-semibold ${currentPage === 'packages' ? 'bg-brand-100 text-brand-700 font-bold' : 'text-brand-800 hover:bg-brand-100'}`}
               >
-                باقاتنا وخدماتنا
+                خدماتنا
               </button>
               <button 
                 onClick={() => { setCurrentPage('timeline'); setMobileMenuOpen(false); }}
                 className={`block w-full text-right px-3 py-2.5 rounded-md text-base font-semibold ${currentPage === 'timeline' ? 'bg-brand-100 text-brand-700 font-bold' : 'text-brand-800 hover:bg-brand-100'}`}
               >
-                جدول المناسبة والعدّة
+                جدول المناسبة
               </button>
             </div>
           )}
@@ -325,7 +325,8 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
           
           {currentPage === 'home' && (
             /* Page 1 - Home & Contact Splash Page (Exactly like the uploaded mockup image) */
-            <div className="flex flex-col items-center bg-brand-50 min-h-[calc(100vh-140px)]">
+            <div>
+              <div className="flex flex-col items-center bg-brand-50 min-h-[calc(100vh-140px)]">
               
               {/* Header Image Banner representing hands/rings */}
               <div 
@@ -411,7 +412,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
 
                         {/* Instagram Button */}
                         <a 
-                          href="https://instagram.com/iuu33_3" 
+                          href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           style={customGradientStyle}
@@ -443,13 +444,163 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
 
                 </div>
               </div>
+              
 
+            </div>
+                            {/* Consultation / Booking Form */}
+              <section id="contact" className="py-24 bg-brand-950 text-brand-50 relative overflow-hidden">
+                <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-brand-800/10 blur-3xl -translate-y-1/2"></div>
+                <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-brand-900/15 blur-3xl translate-y-1/2"></div>
+
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+                  <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    {/* Left text */}
+                    <div className="lg:col-span-5 text-right space-y-8">
+                      <div className="space-y-4">
+                        <span className="text-xs uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
+                        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">احجزي ليلة العمر لتبدو مذهلة.</h2>
+                      </div>
+                      <p className="text-brand-200 font-light text-base leading-relaxed">
+                        املئي استمارة الحجز المبدئي وسنقوم بالتواصل معكِ خلال ٢٤ ساعة عمل عبر الواتساب لتأكيد موعد اللقاء التنسيقي المبدئي والإجابة على أي استفسارات تخص مناسبتكِ الغالية.
+                      </p>
+                      
+                      <div className="space-y-5 pt-6 border-t border-brand-900">
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/wplogo.jpg" alt="WhatsApp" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
+                            <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/instagramlogo.jpg" alt="Instagram" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
+                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/splogo.jpg" alt="Snapchat" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
+                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right form */}
+                    <div className="lg:col-span-7">
+                      <div className="bg-brand-900/40 backdrop-blur-md rounded-[2.5rem] border border-brand-900 p-8 sm:p-10 shadow-2xl">
+                        {formSubmitted ? (
+                          <div className="py-16 text-center space-y-6 animate-fadeIn">
+                            <div className="w-16 h-16 rounded-full bg-brand-500/20 border border-brand-400 flex items-center justify-center mx-auto text-brand-300 text-3xl">✓</div>
+                            <h3 className="font-serif text-2xl font-bold">تم إرسال طلب الحجز بنجاح</h3>
+                            <p className="text-brand-200 text-sm max-w-sm mx-auto font-light leading-relaxed">
+                              شكراً لثقتكم بفريق SL Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
+                            </p>
+                          </div>
+                        ) : (
+                          <form onSubmit={handleFormSubmit} className="space-y-6">
+                            <div className="grid sm:grid-cols-2 gap-6">
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-brand-300">الاسم الكريم (صاحب المناسبة)</label>
+                                <input 
+                                  id="name"
+                                  type="text" 
+                                  name="name"
+                                  required
+                                  value={contactForm.name}
+                                  onChange={handleFormChange}
+                                  placeholder="مثال: سارة محمد"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                />
+                              </div>
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-brand-300">رقم جوال الواتساب</label>
+                                <input 
+                                  id="phone"
+                                  type="tel" 
+                                  name="phone"
+                                  required
+                                  value={contactForm.phone}
+                                  onChange={handleFormChange}
+                                  placeholder="مثال: 0566795839"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors text-right"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="grid sm:grid-cols-2 gap-6">
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="date" className="text-xs font-bold uppercase tracking-widest text-brand-300">التاريخ المتوقع للمناسبة</label>
+                                <input 
+                                  id="date"
+                                  type="text" 
+                                  name="date"
+                                  required
+                                  value={contactForm.date}
+                                  onChange={handleFormChange}
+                                  placeholder="مثال: سبتمبر 2026"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                />
+                              </div>
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="serviceType" className="text-xs font-bold uppercase tracking-widest text-brand-300">الباقة / الخدمة المطلوبة</label>
+                                <select 
+                                  id="serviceType"
+                                  name="serviceType"
+                                  value={contactForm.serviceType}
+                                  onChange={handleFormChange}
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-sm transition-colors"
+                                >
+                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
+                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
+                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)</option>
+                                  <option value="photography">باقة مصورة جوال</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div className="space-y-2 text-left">
+                              <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-brand-300">تفاصيل إضافية حول القاعة والزفة ورؤيتكم</label>
+                              <textarea 
+                                id="message"
+                                name="message"
+                                rows={4}
+                                value={contactForm.message}
+                                onChange={handleFormChange}
+                                placeholder="أخبرونا عن القاعة، عدد الحضور المتوقع، والاحتياجات الخاصة بكم لنسهل عليكم ليلتكم..."
+                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors resize-none"
+                              ></textarea>
+                            </div>
+
+                            <button 
+                              type="submit" 
+                              className="w-full bg-brand-400 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-300 transition-colors py-4 rounded-xl shadow-lg text-xs cursor-pointer"
+                            >
+                              إرسال طلب الحجز المبدئي
+                            </button>
+                          </form>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           )}
 
           {currentPage === 'packages' && (
             /* Page 2 - Packages and Services PDF trigger anchors */
-            <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div>
+              <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
               <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
                 <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-brand-500 font-bold">باقاتنا وخدماتنا المكتوبة</span>
                 <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">باقات SL Team لتنظيم المناسبات</h2>
@@ -531,6 +682,154 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                 </a>
               </div>
             </section>
+                            {/* Consultation / Booking Form */}
+              <section id="contact" className="py-24 bg-brand-950 text-brand-50 relative overflow-hidden">
+                <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-brand-800/10 blur-3xl -translate-y-1/2"></div>
+                <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-brand-900/15 blur-3xl translate-y-1/2"></div>
+
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+                  <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    {/* Left text */}
+                    <div className="lg:col-span-5 text-right space-y-8">
+                      <div className="space-y-4">
+                        <span className="text-xs uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
+                        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">احجزي ليلة العمر لتبدو مذهلة.</h2>
+                      </div>
+                      <p className="text-brand-200 font-light text-base leading-relaxed">
+                        املئي استمارة الحجز المبدئي وسنقوم بالتواصل معكِ خلال ٢٤ ساعة عمل عبر الواتساب لتأكيد موعد اللقاء التنسيقي المبدئي والإجابة على أي استفسارات تخص مناسبتكِ الغالية.
+                      </p>
+                      
+                      <div className="space-y-5 pt-6 border-t border-brand-900">
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/wplogo.jpg" alt="WhatsApp" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
+                            <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/instagramlogo.jpg" alt="Instagram" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
+                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/splogo.jpg" alt="Snapchat" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
+                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right form */}
+                    <div className="lg:col-span-7">
+                      <div className="bg-brand-900/40 backdrop-blur-md rounded-[2.5rem] border border-brand-900 p-8 sm:p-10 shadow-2xl">
+                        {formSubmitted ? (
+                          <div className="py-16 text-center space-y-6 animate-fadeIn">
+                            <div className="w-16 h-16 rounded-full bg-brand-500/20 border border-brand-400 flex items-center justify-center mx-auto text-brand-300 text-3xl">✓</div>
+                            <h3 className="font-serif text-2xl font-bold">تم إرسال طلب الحجز بنجاح</h3>
+                            <p className="text-brand-200 text-sm max-w-sm mx-auto font-light leading-relaxed">
+                              شكراً لثقتكم بفريق SL Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
+                            </p>
+                          </div>
+                        ) : (
+                          <form onSubmit={handleFormSubmit} className="space-y-6">
+                            <div className="grid sm:grid-cols-2 gap-6">
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-brand-300">الاسم الكريم (صاحب المناسبة)</label>
+                                <input 
+                                  id="name"
+                                  type="text" 
+                                  name="name"
+                                  required
+                                  value={contactForm.name}
+                                  onChange={handleFormChange}
+                                  placeholder="مثال: سارة محمد"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                />
+                              </div>
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-brand-300">رقم جوال الواتساب</label>
+                                <input 
+                                  id="phone"
+                                  type="tel" 
+                                  name="phone"
+                                  required
+                                  value={contactForm.phone}
+                                  onChange={handleFormChange}
+                                  placeholder="مثال: 0566795839"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors text-right"
+                                />
+                              </div>
+                            </div>
+
+                            <div className="grid sm:grid-cols-2 gap-6">
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="date" className="text-xs font-bold uppercase tracking-widest text-brand-300">التاريخ المتوقع للمناسبة</label>
+                                <input 
+                                  id="date"
+                                  type="text" 
+                                  name="date"
+                                  required
+                                  value={contactForm.date}
+                                  onChange={handleFormChange}
+                                  placeholder="مثال: سبتمبر 2026"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                />
+                              </div>
+                              <div className="space-y-2 text-right">
+                                <label htmlFor="serviceType" className="text-xs font-bold uppercase tracking-widest text-brand-300">الباقة / الخدمة المطلوبة</label>
+                                <select 
+                                  id="serviceType"
+                                  name="serviceType"
+                                  value={contactForm.serviceType}
+                                  onChange={handleFormChange}
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-sm transition-colors"
+                                >
+                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
+                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
+                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)</option>
+                                  <option value="photography">باقة مصورة جوال</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div className="space-y-2 text-left">
+                              <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-brand-300">تفاصيل إضافية حول القاعة والزفة ورؤيتكم</label>
+                              <textarea 
+                                id="message"
+                                name="message"
+                                rows={4}
+                                value={contactForm.message}
+                                onChange={handleFormChange}
+                                placeholder="أخبرونا عن القاعة، عدد الحضور المتوقع، والاحتياجات الخاصة بكم لنسهل عليكم ليلتكم..."
+                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors resize-none"
+                              ></textarea>
+                            </div>
+
+                            <button 
+                              type="submit" 
+                              className="w-full bg-brand-400 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-300 transition-colors py-4 rounded-xl shadow-lg text-xs cursor-pointer"
+                            >
+                              إرسال طلب الحجز المبدئي
+                            </button>
+                          </form>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
           )}
 
           {currentPage === 'timeline' && (
@@ -651,21 +950,27 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       
                       <div className="space-y-5 pt-6 border-t border-brand-900">
                         <div className="flex items-center gap-4 justify-start">
-                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center text-brand-300 text-lg border border-brand-800">☎</div>
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/wplogo.jpg" alt="WhatsApp" className="w-full h-full object-cover" />
+                          </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
                             <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
-                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center text-brand-300 text-lg border border-brand-800">📸</div>
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/instagramlogo.jpg" alt="Instagram" className="w-full h-full object-cover" />
+                          </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
-                            <a href="https://instagram.com/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
-                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center text-brand-300 text-lg border border-brand-800">👻</div>
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/splogo.jpg" alt="Snapchat" className="w-full h-full object-cover" />
+                          </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
                             <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
@@ -784,30 +1089,9 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-8">
           
           <div className="flex flex-col items-center gap-2">
-            <img src="/logo.jpg" alt="SL Team Logo" className="h-24 w-auto rounded-2xl object-contain mix-blend-multiply border border-brand-200/40 shadow-md" />
-            <span className="text-[10px] tracking-[0.25em] text-brand-500 uppercase mt-1 font-semibold">لتنظيم وإدارة الحفلات والمناسبات</span>
-          </div>
+            <img src="/logo.jpg" alt="SL Team Logo" className="h-24 w-auto rounded-2xl object-contain mix-blend-multiply border border-brand-200/40 shadow-md" />          </div>
 
-          <div className="flex justify-center space-x-10 space-x-reverse text-xs font-bold uppercase text-brand-700">
-            <button 
-              onClick={() => setCurrentPage('home')}
-              className={`hover:text-brand-950 transition-colors cursor-pointer ${currentPage === 'home' ? 'text-brand-900 underline underline-offset-4' : ''}`}
-            >
-              من نحن
-            </button>
-            <button 
-              onClick={() => setCurrentPage('packages')}
-              className={`hover:text-brand-950 transition-colors cursor-pointer ${currentPage === 'packages' ? 'text-brand-900 underline underline-offset-4' : ''}`}
-            >
-              خدماتنا
-            </button>
-            <button 
-              onClick={() => setCurrentPage('timeline')}
-              className={`hover:text-brand-950 transition-colors cursor-pointer mr-10 ${currentPage === 'timeline' ? 'text-brand-900 underline underline-offset-4' : ''}`}
-            >
-              جدول المناسبة
-            </button>
-          </div>
+    
 
           <div className="w-12 h-[1px] bg-brand-300 mx-auto"></div>
 
