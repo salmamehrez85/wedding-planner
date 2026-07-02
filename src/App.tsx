@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface Service {
   title: string;
@@ -27,6 +27,10 @@ function App() {
     serviceType: 'bride_10',
     message: ''
   });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [currentPage]);
 
   const services: Service[] = [
     {
@@ -221,7 +225,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
       
       <div>
         {/* Top Welcome Ribbon */}
-        <div className="bg-brand-900 text-brand-100 px-4 py-2.5 text-xs sm:text-sm font-semibold tracking-wider text-center uppercase">
+        <div className="bg-brand-900 text-brand-100 px-4 py-2.5 text-xs sm:text-md font-semibold tracking-wider text-center uppercase">
           فريق SL Team لتنظيم الحفلات والمناسبات الفاخرة • نحمل عنكم العبء لتستمتعوا بليلتكم
         </div>
 
@@ -240,7 +244,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
               </div>
 
               {/* Desktop Navigation Pages state switches */}
-              <div className="hidden md:flex items-center space-x-reverse space-x-10 text-sm font-bold">
+              <div className="hidden md:flex items-center space-x-reverse space-x-10 text-md font-bold">
                 <button 
                   onClick={() => setCurrentPage('home')}
                   className={`pb-1 transition-all duration-250 cursor-pointer ${
@@ -375,20 +379,9 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       <div className="h-[2px] w-24 bg-brand-400 mx-auto md:mr-0 md:ml-auto mt-2"></div>
                     </div>
 
-                    <p className="text-brand-800 text-sm sm:text-base leading-relaxed font-light max-w-md">
+                    <p className="text-brand-800 text-md sm:text-base leading-relaxed font-light max-w-md">
                       مرحباً بكِ في عالم الفخامة مع SL Team. نهتم بأدق تفاصيل حفل زفافكِ لنجعل منه ذكرى لا تُنسى. من التخطيط الأولي إلى التنظيم الميداني المتكامل في ليلة العمر، نسير معكِ خطوة بخطوة بكل حب وإتقان.
                     </p>
-
-                    {/* Explore Packages CTA */}
-                    <div className="w-full max-w-[340px] mx-auto md:mr-0 md:ml-auto">
-                      <button 
-                        onClick={() => setCurrentPage('packages')}
-                        className="bg-brand-900 hover:bg-brand-800 text-brand-50 px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-102 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg w-full"
-                      >
-                        <span>استكشاف باقاتنا وخدماتنا</span>
-                        <span className="text-xs">←</span>
-                      </button>
-                    </div>
 
                     <div className="w-full space-y-4">
                       {/* Booking & Connection Header */}
@@ -405,7 +398,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           target="_blank" 
                           rel="noopener noreferrer"
                           style={customGradientStyle}
-                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-md hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
                         >
                           WHATS APP
                         </a>
@@ -416,7 +409,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           target="_blank" 
                           rel="noopener noreferrer"
                           style={customGradientStyle}
-                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-md hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
                         >
                           INSTAGRAM
                         </a>
@@ -427,7 +420,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           target="_blank" 
                           rel="noopener noreferrer"
                           style={customGradientStyle}
-                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-md hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
                         >
                           SNAPCHAT
                         </a>
@@ -444,7 +437,17 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
 
                 </div>
               </div>
-              
+
+              {/* Explore Packages CTA */}
+              <div className="w-full max-w-[340px] mx-auto mb-16 px-6">
+                <button 
+                  onClick={() => setCurrentPage('packages')}
+                  className="bg-brand-900 hover:bg-brand-800 text-brand-50 px-8 py-3.5 text-md font-bold tracking-wide transition-all hover:scale-102 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg w-full"
+                >
+                  <span>استكشاف باقاتنا وخدماتنا</span>
+                  <span className="text-xs">←</span>
+                </button>
+              </div>
 
             </div>
                             {/* Consultation / Booking Form */}
@@ -471,7 +474,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
-                            <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
+                            <a href="tel:+966566795839" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -480,7 +483,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
-                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
+                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -489,7 +492,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
-                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
                           </div>
                         </div>
                       </div>
@@ -502,7 +505,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           <div className="py-16 text-center space-y-6 animate-fadeIn">
                             <div className="w-16 h-16 rounded-full bg-brand-500/20 border border-brand-400 flex items-center justify-center mx-auto text-brand-300 text-3xl">✓</div>
                             <h3 className="font-serif text-2xl font-bold">تم إرسال طلب الحجز بنجاح</h3>
-                            <p className="text-brand-200 text-sm max-w-sm mx-auto font-light leading-relaxed">
+                            <p className="text-brand-200 text-md max-w-sm mx-auto font-light leading-relaxed">
                               شكراً لثقتكم بفريق SL Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
                             </p>
                           </div>
@@ -519,7 +522,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.name}
                                   onChange={handleFormChange}
                                   placeholder="مثال: سارة محمد"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors"
                                 />
                               </div>
                               <div className="space-y-2 text-right">
@@ -532,7 +535,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.phone}
                                   onChange={handleFormChange}
                                   placeholder="مثال: 0566795839"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors text-right"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors text-right"
                                 />
                               </div>
                             </div>
@@ -548,7 +551,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.date}
                                   onChange={handleFormChange}
                                   placeholder="مثال: سبتمبر 2026"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors"
                                 />
                               </div>
                               <div className="space-y-2 text-right">
@@ -558,7 +561,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   name="serviceType"
                                   value={contactForm.serviceType}
                                   onChange={handleFormChange}
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-md transition-colors"
                                 >
                                   <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
                                   <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
@@ -577,13 +580,13 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                 value={contactForm.message}
                                 onChange={handleFormChange}
                                 placeholder="أخبرونا عن القاعة، عدد الحضور المتوقع، والاحتياجات الخاصة بكم لنسهل عليكم ليلتكم..."
-                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors resize-none"
+                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors resize-none"
                               ></textarea>
                             </div>
 
                             <button 
                               type="submit" 
-                              className="w-full bg-brand-400 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-300 transition-colors py-4 rounded-xl shadow-lg text-xs cursor-pointer"
+                              className="w-full bg-brand-200 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-100 transition-colors py-4 rounded-xl shadow-lg text-md cursor-pointer"
                             >
                               إرسال طلب الحجز المبدئي
                             </button>
@@ -602,9 +605,9 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
             <div>
               <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
               <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-brand-500 font-bold">باقاتنا وخدماتنا المكتوبة</span>
+                <span className="text-xs sm:text-md uppercase tracking-[0.25em] text-brand-500 font-bold">باقاتنا وخدماتنا المكتوبة</span>
                 <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">باقات SL Team لتنظيم المناسبات</h2>
-                <p className="text-brand-700 font-light text-sm">اضغط على أي باقة لفتح ملف الـ PDF الأصلي والاطلاع على التفاصيل الرسمية.</p>
+                <p className="text-brand-700 font-light text-md">اضغط على أي باقة لفتح ملف الـ PDF الأصلي والاطلاع على التفاصيل الرسمية.</p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
@@ -620,11 +623,11 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       </div>
 
                       <h3 className="font-serif text-xl font-bold text-brand-900">{service.title}</h3>
-                      <p className="text-brand-800 text-xs sm:text-sm leading-relaxed font-light">{service.description}</p>
+                      <p className="text-brand-800 text-xs sm:text-md leading-relaxed font-light">{service.description}</p>
                       
                       <div className="w-full h-[1px] bg-brand-200 my-4"></div>
                       
-                      <ul className="space-y-2 text-xs text-brand-800 font-light">
+                      <ul className="space-y-2 text-sm sm:text-md text-brand-800 font-light">
                         {service.features.map((feat, fIdx) => (
                           <li key={fIdx} className="flex items-start gap-2">
                             <span className="text-brand-500 font-bold">•</span>
@@ -637,16 +640,16 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     <div className="space-y-4 pt-4">
                       <div className="flex justify-between items-center text-xs font-semibold">
                         <span className="text-brand-500">التكلفة المتوقعة:</span>
-                        <span className="text-brand-950 font-serif font-bold text-sm">{service.price}</span>
+                        <span className="text-brand-950 font-serif font-bold text-md">{service.price}</span>
                       </div>
                       
                       <a 
                         href={service.pdfPath}
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="block w-full text-center bg-brand-800 hover:bg-brand-700 text-brand-50 font-bold text-xs py-3.5 rounded-xl transition-all shadow-sm cursor-pointer"
+                        className="block w-full text-center bg-brand-800 hover:bg-brand-700 text-brand-50 font-bold text-md py-3.5 rounded-xl transition-all shadow-sm cursor-pointer"
                       >
-                        عرض تفاصيل الباقة (PDF) 📄
+                        عرض تفاصيل الباقة (PDF) 
                       </a>
                     </div>
                   </div>
@@ -657,30 +660,20 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
               <div className="mt-12 bg-brand-900 text-brand-50 rounded-[2rem] p-8 flex flex-col sm:flex-row items-center justify-between text-right gap-6 border border-brand-850 shadow-md">
                 <div className="space-y-2">
                   <h4 className="font-serif text-lg sm:text-xl font-bold">مخطط وجدول المناسبة الميداني</h4>
-                  <p className="text-xs sm:text-sm text-brand-200 font-light">
+                  <p className="text-xs sm:text-md text-brand-200 font-light">
                     اكتشفي كيف ننظم وننسق تفاصيل يومكِ خطوة بخطوة من العصر وحتى نهاية حفل الزفاف.
                   </p>
                 </div>
                 <button 
                   onClick={() => setCurrentPage('timeline')}
-                  className="bg-brand-400 hover:bg-brand-300 text-brand-950 px-8 py-3.5 rounded-full text-xs font-bold transition-all hover:scale-102 flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer shadow-md"
+                  className="bg-brand-200 hover:bg-brand-100 text-brand-950 px-8 py-3.5 rounded-xl text-md font-bold transition-all hover:scale-102 flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer shadow-md"
                 >
                   <span>عرض جدول المناسبة</span>
                   <span className="text-xs">←</span>
                 </button>
               </div>
 
-              {/* Quick WhatsApp CTA Footer block */}
-              <div className="mt-12 bg-brand-100/60 rounded-2xl border border-brand-200 p-6 flex flex-col sm:flex-row items-center justify-between text-right gap-6">
-                <div className="space-y-2">
-                  <h4 className="font-bold text-brand-900 text-base">هل ترغبين بحجز مباشر؟</h4>
-                  <p className="text-xs text-brand-600 font-light">تواصل معنا الآن عبر الواتساب للاستفسار وتأكيد المواعيد الشاغرة للباقات والمصورة.</p>
-                </div>
-                <a href="https://wa.me/966566795839" target="_blank" rel="noopener noreferrer" className="bg-brand-900 hover:bg-brand-800 text-brand-50 px-6 py-3 rounded-full text-xs font-bold tracking-wide flex items-center gap-2 flex-shrink-0 transition-colors shadow-sm">
-                  <span>واتساب مباشر للمبيعات</span>
-                  <span>💬</span>
-                </a>
-              </div>
+ 
             </section>
                             {/* Consultation / Booking Form */}
               <section id="contact" className="py-24 bg-brand-950 text-brand-50 relative overflow-hidden">
@@ -706,7 +699,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
-                            <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
+                            <a href="tel:+966566795839" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -715,7 +708,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
-                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
+                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -724,7 +717,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
-                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
                           </div>
                         </div>
                       </div>
@@ -737,7 +730,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           <div className="py-16 text-center space-y-6 animate-fadeIn">
                             <div className="w-16 h-16 rounded-full bg-brand-500/20 border border-brand-400 flex items-center justify-center mx-auto text-brand-300 text-3xl">✓</div>
                             <h3 className="font-serif text-2xl font-bold">تم إرسال طلب الحجز بنجاح</h3>
-                            <p className="text-brand-200 text-sm max-w-sm mx-auto font-light leading-relaxed">
+                            <p className="text-brand-200 text-md max-w-sm mx-auto font-light leading-relaxed">
                               شكراً لثقتكم بفريق SL Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
                             </p>
                           </div>
@@ -754,7 +747,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.name}
                                   onChange={handleFormChange}
                                   placeholder="مثال: سارة محمد"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors"
                                 />
                               </div>
                               <div className="space-y-2 text-right">
@@ -767,7 +760,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.phone}
                                   onChange={handleFormChange}
                                   placeholder="مثال: 0566795839"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors text-right"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors text-right"
                                 />
                               </div>
                             </div>
@@ -783,7 +776,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.date}
                                   onChange={handleFormChange}
                                   placeholder="مثال: سبتمبر 2026"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors"
                                 />
                               </div>
                               <div className="space-y-2 text-right">
@@ -793,7 +786,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   name="serviceType"
                                   value={contactForm.serviceType}
                                   onChange={handleFormChange}
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-md transition-colors"
                                 >
                                   <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
                                   <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
@@ -812,13 +805,13 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                 value={contactForm.message}
                                 onChange={handleFormChange}
                                 placeholder="أخبرونا عن القاعة، عدد الحضور المتوقع، والاحتياجات الخاصة بكم لنسهل عليكم ليلتكم..."
-                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors resize-none"
+                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors resize-none"
                               ></textarea>
                             </div>
 
-                            <button 
+                              <button 
                               type="submit" 
-                              className="w-full bg-brand-400 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-300 transition-colors py-4 rounded-xl shadow-lg text-xs cursor-pointer"
+                              className="w-full bg-brand-200 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-100 transition-colors py-4 rounded-xl shadow-lg text-md cursor-pointer"
                             >
                               إرسال طلب الحجز المبدئي
                             </button>
@@ -838,9 +831,9 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
               {/* Event Timeline Selector */}
               <section id="timeline" className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 border-b border-brand-200/40">
                 <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                  <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-brand-500 font-bold">برنامج العمل الميداني</span>
+                  <span className="text-xs sm:text-md uppercase tracking-[0.25em] text-brand-500 font-bold">برنامج العمل الميداني</span>
                   <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950 mr-5">جدول المساعدة في تحضيرات المناسبة</h2>
-                  <p className="text-brand-700 font-light text-sm">خطوة بخطوة كيف نقوم بإدارة وتنسيق ليلتكم من العصر وحتى تأمين آخر غرض بعد العشاء.</p>
+                  <p className="text-brand-700 font-light text-md">خطوة بخطوة كيف نقوم بإدارة وتنسيق ليلتكم من العصر وحتى تأمين آخر غرض بعد العشاء.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-12 gap-8 items-stretch">
@@ -856,7 +849,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                             : 'bg-brand-50 text-brand-800 border-brand-200 hover:bg-brand-100/60'
                         }`}
                       >
-                        <span className="font-bold text-sm">{evt.title}</span>
+                        <span className="font-bold text-md">{evt.title}</span>
                         <span className={`font-serif text-xs px-2.5 py-1 rounded-full font-medium ${
                           selectedTimelineIndex === idx ? 'bg-brand-600 text-brand-50' : 'bg-brand-200/60 text-brand-700'
                         }`}>
@@ -873,7 +866,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                         <h3 className="font-serif text-2xl font-bold text-brand-900">
                           {timelineEvents[selectedTimelineIndex].title}
                         </h3>
-                        <span className="text-brand-500 font-serif text-sm font-bold bg-brand-100 px-3.5 py-1.5 rounded-full border border-brand-200">
+                        <span className="text-brand-500 font-serif text-md font-bold bg-brand-100 px-3.5 py-1.5 rounded-full border border-brand-200">
                           {timelineEvents[selectedTimelineIndex].time}
                         </span>
                       </div>
@@ -882,7 +875,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                         <p className="text-xs uppercase tracking-widest text-brand-400 font-bold">مهام وصيفتكِ في هذه الفترة الزمنية:</p>
                         <ul className="space-y-3.5">
                           {timelineEvents[selectedTimelineIndex].notes.map((note, nIdx) => (
-                            <li key={nIdx} className="text-brand-800 text-sm flex items-start gap-3">
+                            <li key={nIdx} className="text-brand-800 text-md flex items-start gap-3">
                               <span className="w-5 h-5 rounded-full bg-brand-100 flex-shrink-0 flex items-center justify-center text-brand-600 text-xs font-bold">✓</span>
                               <span className="leading-relaxed font-light">{note}</span>
                             </li>
@@ -902,15 +895,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                       {emergencyKitItems.map((item, idx) => (
                         <div key={idx} className="bg-brand-50 rounded-2xl p-5 border border-brand-200 hover:border-brand-400 transition-all hover:shadow-sm text-right space-y-2">
-                          <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-sm">✚</div>
-                          <h4 className="font-bold text-brand-900 text-sm sm:text-base">{item.name}</h4>
-                          <p className="text-[11px] text-brand-600 leading-normal font-light">{item.desc}</p>
+                          <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-md">✚</div>
+                          <h4 className="font-bold text-brand-900 text-md sm:text-base">{item.name}</h4>
+                          <p className="text-sm sm:text-md text-brand-600 leading-normal font-light">{item.desc}</p>
                         </div>
                       ))}
                       <div className="bg-brand-800 text-brand-50 rounded-2xl p-5 flex flex-col justify-between text-right space-y-4 shadow border border-brand-700">
                         <span className="text-xl">🛠️</span>
                         <div className="space-y-1">
-                          <h4 className="font-bold text-sm">حقيبة طوارئ كاملة</h4>
+                          <h4 className="font-bold text-md">حقيبة طوارئ كاملة</h4>
                           <p className="text-[10px] text-brand-200 font-light">مرافقة للوصيفة طوال ساعات الحفل دون أي رسوم إضافية.</p>
                         </div>
                       </div>
@@ -919,12 +912,12 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
 
                   {/* text details column */}
                   <div className="lg:col-span-5 text-right space-y-6 order-1 lg:order-2">
-                    <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-brand-500 font-bold">جاهزون لأي طارئ</span>
+                    <span className="text-xs sm:text-md uppercase tracking-[0.25em] text-brand-500 font-bold">جاهزون لأي طارئ</span>
                     <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">عدّة وحقيبة الطوارئ المتكاملة</h2>
                     <p className="text-brand-850 font-light text-base leading-relaxed">
                       تأتي كل وصيفة من فريقنا مجهزة بالكامل بحقيبة إسعافات طارئة لتفادي وتصليح أي مشكلة في المظهر أو التنسيقات قبل الحفل أو أثنائه، مما يضمن سير المناسبة بأعلى معايير الانسيابية ودون ثانية قلق واحدة.
                     </p>
-                    <div className="p-5 rounded-2xl bg-brand-100/60 border border-brand-200 text-sm text-brand-800 leading-relaxed font-light">
+                    <div className="p-5 rounded-2xl bg-brand-100/60 border border-brand-200 text-md text-brand-800 leading-relaxed font-light">
                       <strong className="font-bold text-brand-900">الولاعة والفحم الفوري</strong> لإشعال البخور باستمرار، <strong className="font-bold text-brand-900">غراء الرموش والأظافر</strong> لمعالجة سريعة لفساتين العرائس وصديقاتهن، و<strong className="font-bold text-brand-900">كاوية البخار</strong> لضمان ثياب مفرودة دائماً.
                     </div>
                   </div>
@@ -955,7 +948,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">للتواصل الهاتفي والواتساب</p>
-                            <a href="tel:+966566795839" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
+                            <a href="tel:+966566795839" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">+966 56 679 5839</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -964,7 +957,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب الإنستغرام</p>
-                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
+                            <a href="https://www.instagram.com/iu33___?igsh=a29ham5jM2R1YTVm&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33___</a>
                           </div>
                         </div>
                         <div className="flex items-center gap-4 justify-start">
@@ -973,7 +966,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           </div>
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
-                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                            <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
                           </div>
                         </div>
                       </div>
@@ -986,7 +979,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           <div className="py-16 text-center space-y-6 animate-fadeIn">
                             <div className="w-16 h-16 rounded-full bg-brand-500/20 border border-brand-400 flex items-center justify-center mx-auto text-brand-300 text-3xl">✓</div>
                             <h3 className="font-serif text-2xl font-bold">تم إرسال طلب الحجز بنجاح</h3>
-                            <p className="text-brand-200 text-sm max-w-sm mx-auto font-light leading-relaxed">
+                            <p className="text-brand-200 text-md max-w-sm mx-auto font-light leading-relaxed">
                               شكراً لثقتكم بفريق SL Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
                             </p>
                           </div>
@@ -1003,7 +996,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.name}
                                   onChange={handleFormChange}
                                   placeholder="مثال: سارة محمد"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors"
                                 />
                               </div>
                               <div className="space-y-2 text-right">
@@ -1016,7 +1009,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.phone}
                                   onChange={handleFormChange}
                                   placeholder="مثال: 0566795839"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors text-right"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors text-right"
                                 />
                               </div>
                             </div>
@@ -1032,7 +1025,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   value={contactForm.date}
                                   onChange={handleFormChange}
                                   placeholder="مثال: سبتمبر 2026"
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors"
                                 />
                               </div>
                               <div className="space-y-2 text-right">
@@ -1042,7 +1035,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   name="serviceType"
                                   value={contactForm.serviceType}
                                   onChange={handleFormChange}
-                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-sm transition-colors"
+                                  className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-md transition-colors"
                                 >
                                   <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
                                   <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
@@ -1061,13 +1054,13 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                 value={contactForm.message}
                                 onChange={handleFormChange}
                                 placeholder="أخبرونا عن القاعة، عدد الحضور المتوقع، والاحتياجات الخاصة بكم لنسهل عليكم ليلتكم..."
-                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-sm transition-colors resize-none"
+                                className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 placeholder-brand-800 text-md transition-colors resize-none"
                               ></textarea>
                             </div>
 
-                            <button 
+                          <button 
                               type="submit" 
-                              className="w-full bg-brand-400 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-300 transition-colors py-4 rounded-xl shadow-lg text-xs cursor-pointer"
+                              className="w-full bg-brand-200 text-brand-950 font-bold tracking-wider uppercase hover:bg-brand-100 transition-colors py-4 rounded-xl shadow-lg text-md cursor-pointer"
                             >
                               إرسال طلب الحجز المبدئي
                             </button>
