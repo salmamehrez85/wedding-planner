@@ -179,6 +179,32 @@ function App() {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Map service key to reader-friendly Arabic name
+    const serviceNames: Record<string, string> = {
+      bride_6: "وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)",
+      bride_10: "وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)",
+      family_10: "وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)",
+      photography: "باقة مصورة جوال"
+    };
+    
+    const chosenService = serviceNames[contactForm.serviceType] || contactForm.serviceType;
+    
+    // Construct the pre-filled message
+    const messageText = `السلام عليكم S Team، أرغب في حجز مبدئي للتفاصيل التالية:
+- الاسم الكريم: ${contactForm.name}
+- جوال التواصل: ${contactForm.phone}
+- تاريخ المناسبة: ${contactForm.date}
+- الخدمة/الباقة: ${chosenService}
+${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : ""}`;
+
+    // Encode text and generate WhatsApp link
+    const whatsappUrl = `https://wa.me/966566795839?text=${encodeURIComponent(messageText)}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    // Show visual confirmation on the page
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);
@@ -319,58 +345,93 @@ function App() {
                 />
               </div>
 
-              {/* Wedding Planner Title */}
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-[0.2em] text-brand-950 uppercase mt-8 text-center">
-                WEDDING PLANNER
-              </h1>
+              {/* Content Grid Container */}
+              <div className="max-w-6xl w-full px-6 sm:px-8 lg:px-12 mt-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+                  
+                  {/* Image Column */}
+                  <div className="md:col-span-6 order-1 md:order-2 flex justify-center">
+                    <div className="relative group max-w-[380px] md:max-w-full rounded-3xl overflow-hidden shadow-2xl border border-brand-200/60 p-2 bg-white transition-all duration-300 hover:shadow-brand-200">
+                      <div className="rounded-2xl overflow-hidden aspect-[3/5] relative">
+                        <img 
+                          src="/wedding.jpeg" 
+                          alt="S Team Wedding" 
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent"></div>
+                      </div>
+                    </div>
+                  </div>
 
-              {/* Booking & Connection Header */}
-              <p className="font-serif text-lg sm:text-xl text-brand-800 text-center font-semibold mt-4 mb-8">
-                للحجز و التواصل
-              </p>
+                  {/* Info & Links Column */}
+                  <div className="md:col-span-6 order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-right space-y-6">
+                    
+                    <div className="space-y-3">
+                      {/* Wedding Planner Title */}
+                      <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light tracking-[0.2em] text-brand-950 uppercase leading-none">
+                        WEDDING PLANNER
+                      </h1>
+                      <div className="h-[2px] w-24 bg-brand-400 mx-auto md:mr-0 md:ml-auto mt-2"></div>
+                    </div>
 
-              {/* Premium Gradient Pill Buttons Column */}
-              <div className="flex flex-col space-y-5 w-full max-w-[290px] sm:max-w-[340px] px-4">
-                
-                {/* WhatsApp Button */}
-                <a 
-                  href="https://wa.me/966566795839" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={customGradientStyle}
-                  className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
-                >
-                  WHATS APP
-                </a>
+                    <p className="text-brand-800 text-sm sm:text-base leading-relaxed font-light max-w-md">
+                      مرحباً بكِ في عالم الفخامة مع S Team. نهتم بأدق تفاصيل حفل زفافكِ لنجعل منه ذكرى لا تُنسى. من التخطيط الأولي إلى التنظيم الميداني المتكامل في ليلة العمر، نسير معكِ خطوة بخطوة بكل حب وإتقان.
+                    </p>
 
-                {/* Instagram Button */}
-                <a 
-                  href="https://instagram.com/iuu33_3" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={customGradientStyle}
-                  className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
-                >
-                  INSTAGRAM
-                </a>
+                    <div className="w-full space-y-4">
+                      {/* Booking & Connection Header */}
+                      <h2 className="font-serif text-lg sm:text-xl text-brand-900 font-bold">
+                        للحجز و التواصل
+                      </h2>
 
-                {/* Snapchat Button */}
-                <a 
-                  href="https://www.snapchat.com/add/iuu33_3" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={customGradientStyle}
-                  className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
-                >
-                  SNAPCHAT
-                </a>
+                      {/* Premium Gradient Pill Buttons Column */}
+                      <div className="flex flex-col space-y-4 w-full max-w-[340px] mx-auto md:mr-0 md:ml-auto">
+                        
+                        {/* WhatsApp Button */}
+                        <a 
+                          href="https://wa.me/966566795839" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={customGradientStyle}
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                        >
+                          WHATS APP
+                        </a>
 
+                        {/* Instagram Button */}
+                        <a 
+                          href="https://instagram.com/iuu33_3" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={customGradientStyle}
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                        >
+                          INSTAGRAM
+                        </a>
+
+                        {/* Snapchat Button */}
+                        <a 
+                          href="https://www.snapchat.com/add/iuu33_3" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={customGradientStyle}
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-sm hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                        >
+                          SNAPCHAT
+                        </a>
+
+                      </div>
+                    </div>
+
+                    {/* Bottom Slogan Text */}
+                    <p className="font-serif text-base sm:text-lg text-brand-800 font-bold italic pt-4">
+                      عيشي ليلتك و خلي الباقي علينا
+                    </p>
+
+                  </div>
+
+                </div>
               </div>
-
-              {/* Bottom Slogan Text */}
-              <p className="font-serif text-base sm:text-lg text-brand-800 text-center font-bold mt-12 mb-16 italic">
-                عيشي ليلتك و خلي الباقي علينا
-              </p>
 
             </div>
           )}
