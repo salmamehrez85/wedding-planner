@@ -191,7 +191,7 @@ function App() {
     const chosenService = serviceNames[contactForm.serviceType] || contactForm.serviceType;
     
     // Construct the pre-filled message
-    const messageText = `السلام عليكم S Team، أرغب في حجز مبدئي للتفاصيل التالية:
+    const messageText = `السلام عليكم SL Team، أرغب في حجز مبدئي للتفاصيل التالية:
 - الاسم الكريم: ${contactForm.name}
 - جوال التواصل: ${contactForm.phone}
 - تاريخ المناسبة: ${contactForm.date}
@@ -222,7 +222,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
       <div>
         {/* Top Welcome Ribbon */}
         <div className="bg-brand-900 text-brand-100 px-4 py-2.5 text-xs sm:text-sm font-semibold tracking-wider text-center uppercase">
-          فريق S Team لتنظيم الحفلات والمناسبات الفاخرة • نحمل عنكم العبء لتستمتعوا بليلتكم
+          فريق SL Team لتنظيم الحفلات والمناسبات الفاخرة • نحمل عنكم العبء لتستمتعوا بليلتكم
         </div>
 
         {/* Sticky Premium Navigation */}
@@ -232,9 +232,9 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
               
               {/* Brand Logo and Subtext */}
               <div className="flex-shrink-0 flex items-center gap-3">
-                <img src="/logo.jpg" alt="S Team Logo" className="h-16 w-auto rounded-xl object-contain mix-blend-multiply border border-brand-200/40 shadow-sm" />
+                <img src="/logo.jpg" alt="SL Team Logo" className="h-16 w-auto rounded-xl object-contain mix-blend-multiply border border-brand-200/40 shadow-sm" />
                 <div className="flex flex-col items-start text-right">
-                  <span className="font-serif text-xl font-bold tracking-wide text-brand-900 leading-none">S Team</span>
+                  <span className="font-serif text-xl font-bold tracking-wide text-brand-900 leading-none">SL Team</span>
                   <span className="text-[9px] tracking-wider text-brand-500 uppercase font-semibold mt-1.5">لتنظيم الحفلات</span>
                 </div>
               </div>
@@ -336,11 +336,11 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                 <div className="absolute inset-0 bg-brand-950/20"></div>
               </div>
 
-              {/* Overlapping S Team Logo Badge */}
+              {/* Overlapping SL Team Logo Badge */}
               <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full border-4 border-brand-100 bg-white overflow-hidden shadow-2xl -mt-18 sm:-mt-22 relative z-10 flex items-center justify-center">
                 <img 
                   src="/logo.jpg" 
-                  alt="S Team Logo" 
+                  alt="SL Team Logo" 
                   className="w-[90%] h-[90%] object-contain mix-blend-multiply" 
                 />
               </div>
@@ -355,7 +355,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                       <div className="rounded-2xl overflow-hidden aspect-[3/5] relative">
                         <img 
                           src="/wedding.jpeg" 
-                          alt="S Team Wedding" 
+                          alt="SL Team Wedding" 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 via-transparent to-transparent"></div>
@@ -375,8 +375,19 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     </div>
 
                     <p className="text-brand-800 text-sm sm:text-base leading-relaxed font-light max-w-md">
-                      مرحباً بكِ في عالم الفخامة مع S Team. نهتم بأدق تفاصيل حفل زفافكِ لنجعل منه ذكرى لا تُنسى. من التخطيط الأولي إلى التنظيم الميداني المتكامل في ليلة العمر، نسير معكِ خطوة بخطوة بكل حب وإتقان.
+                      مرحباً بكِ في عالم الفخامة مع SL Team. نهتم بأدق تفاصيل حفل زفافكِ لنجعل منه ذكرى لا تُنسى. من التخطيط الأولي إلى التنظيم الميداني المتكامل في ليلة العمر، نسير معكِ خطوة بخطوة بكل حب وإتقان.
                     </p>
+
+                    {/* Explore Packages CTA */}
+                    <div className="w-full max-w-[340px] mx-auto md:mr-0 md:ml-auto">
+                      <button 
+                        onClick={() => setCurrentPage('packages')}
+                        className="bg-brand-900 hover:bg-brand-800 text-brand-50 px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all hover:scale-102 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg w-full"
+                      >
+                        <span>استكشاف باقاتنا وخدماتنا</span>
+                        <span className="text-xs">←</span>
+                      </button>
+                    </div>
 
                     <div className="w-full space-y-4">
                       {/* Booking & Connection Header */}
@@ -441,7 +452,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
             <section className="py-16 sm:py-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
               <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
                 <span className="text-xs sm:text-sm uppercase tracking-[0.25em] text-brand-500 font-bold">باقاتنا وخدماتنا المكتوبة</span>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">باقات S Team لتنظيم المناسبات</h2>
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">باقات SL Team لتنظيم المناسبات</h2>
                 <p className="text-brand-700 font-light text-sm">اضغط على أي باقة لفتح ملف الـ PDF الأصلي والاطلاع على التفاصيل الرسمية.</p>
               </div>
 
@@ -489,6 +500,23 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Event Timeline CTA */}
+              <div className="mt-12 bg-brand-900 text-brand-50 rounded-[2rem] p-8 flex flex-col sm:flex-row items-center justify-between text-right gap-6 border border-brand-850 shadow-md">
+                <div className="space-y-2">
+                  <h4 className="font-serif text-lg sm:text-xl font-bold">مخطط وجدول المناسبة الميداني</h4>
+                  <p className="text-xs sm:text-sm text-brand-200 font-light">
+                    اكتشفي كيف ننظم وننسق تفاصيل يومكِ خطوة بخطوة من العصر وحتى نهاية حفل الزفاف.
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setCurrentPage('timeline')}
+                  className="bg-brand-400 hover:bg-brand-300 text-brand-950 px-8 py-3.5 rounded-full text-xs font-bold transition-all hover:scale-102 flex items-center justify-center gap-2 flex-shrink-0 cursor-pointer shadow-md"
+                >
+                  <span>عرض جدول المناسبة</span>
+                  <span className="text-xs">←</span>
+                </button>
               </div>
 
               {/* Quick WhatsApp CTA Footer block */}
@@ -654,7 +682,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                             <div className="w-16 h-16 rounded-full bg-brand-500/20 border border-brand-400 flex items-center justify-center mx-auto text-brand-300 text-3xl">✓</div>
                             <h3 className="font-serif text-2xl font-bold">تم إرسال طلب الحجز بنجاح</h3>
                             <p className="text-brand-200 text-sm max-w-sm mx-auto font-light leading-relaxed">
-                              شكراً لثقتكم بفريق S Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
+                              شكراً لثقتكم بفريق SL Team. سيقوم منسق الحجز الخاص بنا بالتواصل معكم عبر الهاتف أو الواتساب لتأكيد التفاصيل وترتيب لقاء التنسيق الأولي.
                             </p>
                           </div>
                         ) : (
@@ -756,7 +784,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center space-y-8">
           
           <div className="flex flex-col items-center gap-2">
-            <img src="/logo.jpg" alt="S Team Logo" className="h-24 w-auto rounded-2xl object-contain mix-blend-multiply border border-brand-200/40 shadow-md" />
+            <img src="/logo.jpg" alt="SL Team Logo" className="h-24 w-auto rounded-2xl object-contain mix-blend-multiply border border-brand-200/40 shadow-md" />
             <span className="text-[10px] tracking-[0.25em] text-brand-500 uppercase mt-1 font-semibold">لتنظيم وإدارة الحفلات والمناسبات</span>
           </div>
 
@@ -784,7 +812,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
           <div className="w-12 h-[1px] bg-brand-300 mx-auto"></div>
 
           <div className="space-y-2 text-xs text-brand-500 font-light">
-            <p>&copy; {new Date().getFullYear()} S Team لتنظيم الحفلات. جميع الحقوق محفوظة.</p>
+            <p>&copy; {new Date().getFullYear()} SL Team لتنظيم الحفلات. جميع الحقوق محفوظة.</p>
             <p>بثقتكم نتميز ونرتقي دائماً.</p>
           </div>
 
