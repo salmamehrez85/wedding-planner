@@ -36,7 +36,7 @@ function App() {
     {
       title: "وصيفة عروسة",
       description: "نرافقكِ خطوة بخطوة لنكون يدكِ اليمنى وسندكِ في أسعد لياليكِ. نهتم بكل تفاصيل إاطمئنانكِ وإطلالتكِ وراحتكِ النفسية والجسدية.",
-      price: "تبدأ من 350 ريال",
+      price: " ابتداء من ...",
       pdfPath: "/bride_assistant.pdf",
       features: [
         "الاهتمام الكامل بكافة تفاصيل العروسة وإطلالتها",
@@ -56,7 +56,7 @@ function App() {
     {
       title: "وصيفة أهل عريس",
       description: "ننوب عن أهل العريس في إدارة القاعة والضيافة لنمنحكم الفرصة الكاملة للترحيب بضيوفكم دون قلق أو انشغال بالتحضيرات.",
-      price: "550 ريال / 10 ساعات",
+      price: " ابتداء من ...",
       pdfPath: "/family_assistant.pdf",
       features: [
         "الوصول المبكر للقاعة قبل أهل العريس والاشراف على الترتيبات",
@@ -76,13 +76,13 @@ function App() {
     {
       title: "مصورة جوال (تغطية الحفل)",
       description: "تغطية مميزة وحية ليوم زفافكِ بعدسة الجوال لالتقاط التفاصيل واللحظات الخاصة بدقة عالية ونقل الأجواء بكل عفوية.",
-      price: "تبدأ من 350 ريال",
+      price: "ابتداء من ...",
       pdfPath: "/mobile_photography.pdf",
       features: [
         "مصورة جوال محترفة مخصصة لمتابعة تفاصيل الحفل بدقة",
         "تغطية كواليس التجهيز ولقطات عفوية للعروس وأهلها",
         "تسليم فوري للمقاطع والصور عالية الجودة لشبكات التواصل",
-        "باقات مرنة (٦ ساعات بـ ٣٥٠ ريال / فل داي بـ ٥٠٠ ريال)"
+        "باقات مرنة (٦ ساعات / فل داي)"
       ],
       icon: (
         <svg className="w-6 h-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
@@ -186,9 +186,9 @@ function App() {
 
     // Map service key to reader-friendly Arabic name
     const serviceNames: Record<string, string> = {
-      bride_6: "وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)",
-      bride_10: "وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)",
-      family_10: "وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)",
+      bride_6: "وصيفة عروسة - باقة ٦ ساعات",
+      bride_10: "وصيفة عروسة - باقة ١٠ ساعات",
+      family_10: "وصيفة أهل عريس - باقة ١٠ ساعات",
       photography: "باقة مصورة جوال"
     };
     
@@ -425,6 +425,17 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           SNAPCHAT
                         </a>
 
+                        {/* TikTok Button */}
+                        <a 
+                          href="https://www.tiktok.com/@iu33__?_r=1&_t=ZS-97i2Doy3VnJ" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          style={customGradientStyle}
+                          className="w-full h-13 rounded-full flex items-center justify-center text-white font-bold tracking-widest text-xs sm:text-md hover:scale-102 transition-transform shadow-md border border-brand-800/20 cursor-pointer"
+                        >
+                          TIKTOK
+                        </a>
+
                       </div>
                     </div>
 
@@ -444,7 +455,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                   onClick={() => setCurrentPage('packages')}
                   className="bg-brand-900 hover:bg-brand-800 text-brand-50 px-8 py-3.5 text-md font-bold tracking-wide transition-all hover:scale-102 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg w-full"
                 >
-                  <span>استكشاف باقاتنا وخدماتنا</span>
+                  <span>استكشف خدماتنا</span>
                   <span className="text-xs">←</span>
                 </button>
               </div>
@@ -460,7 +471,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     {/* Left text */}
                     <div className="lg:col-span-5 text-right space-y-8">
                       <div className="space-y-4">
-                        <span className="text-xs uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
+                        <span className="text-md uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
                         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">احجزي ليلة العمر لتبدو مذهلة.</h2>
                       </div>
                       <p className="text-brand-200 font-light text-base leading-relaxed">
@@ -493,6 +504,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
                             <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/tiktoklogo.jpg" alt="TikTok" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب التيك توك</p>
+                            <a href="https://www.tiktok.com/@iu33__?_r=1&_t=ZS-97i2Doy3VnJ" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33__</a>
                           </div>
                         </div>
                       </div>
@@ -563,15 +583,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   onChange={handleFormChange}
                                   className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-md transition-colors"
                                 >
-                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
-                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
-                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)</option>
+                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات</option>
+                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات</option>
+                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات</option>
                                   <option value="photography">باقة مصورة جوال</option>
                                 </select>
                               </div>
                             </div>
 
-                            <div className="space-y-2 text-left">
+                            <div className="space-y-2 text-right">
                               <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-brand-300">تفاصيل إضافية حول القاعة والزفة ورؤيتكم</label>
                               <textarea 
                                 id="message"
@@ -622,12 +642,12 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                         {service.icon}
                       </div>
 
-                      <h3 className="font-serif text-xl font-bold text-brand-900">{service.title}</h3>
-                      <p className="text-brand-800 text-xs sm:text-md leading-relaxed font-light">{service.description}</p>
+                      <h3 className="font-serif text-2xl font-bold text-brand-900">{service.title}</h3>
+                      <p className="text-brand-800 text-md leading-relaxed font-light">{service.description}</p>
                       
                       <div className="w-full h-[1px] bg-brand-200 my-4"></div>
                       
-                      <ul className="space-y-2 text-sm sm:text-md text-brand-800 font-light">
+                      <ul className="space-y-2 text-md  text-brand-800 font-light">
                         {service.features.map((feat, fIdx) => (
                           <li key={fIdx} className="flex items-start gap-2">
                             <span className="text-brand-500 font-bold">•</span>
@@ -638,19 +658,11 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     </div>
 
                     <div className="space-y-4 pt-4">
-                      <div className="flex justify-between items-center text-xs font-semibold">
+                      <div className="flex justify-between items-center text-md font-bold">
                         <span className="text-brand-500">التكلفة المتوقعة:</span>
                         <span className="text-brand-950 font-serif font-bold text-md">{service.price}</span>
                       </div>
-                      
-                      <a 
-                        href={service.pdfPath}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="block w-full text-center bg-brand-800 hover:bg-brand-700 text-brand-50 font-bold text-md py-3.5 rounded-xl transition-all shadow-sm cursor-pointer"
-                      >
-                        عرض تفاصيل الباقة (PDF) 
-                      </a>
+          
                     </div>
                   </div>
                 ))}
@@ -660,7 +672,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
               <div className="mt-12 bg-brand-900 text-brand-50 rounded-[2rem] p-8 flex flex-col sm:flex-row items-center justify-between text-right gap-6 border border-brand-850 shadow-md">
                 <div className="space-y-2">
                   <h4 className="font-serif text-lg sm:text-xl font-bold">مخطط وجدول المناسبة الميداني</h4>
-                  <p className="text-xs sm:text-md text-brand-200 font-light">
+                  <p className="text-md text-brand-200 font-light">
                     اكتشفي كيف ننظم وننسق تفاصيل يومكِ خطوة بخطوة من العصر وحتى نهاية حفل الزفاف.
                   </p>
                 </div>
@@ -685,7 +697,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     {/* Left text */}
                     <div className="lg:col-span-5 text-right space-y-8">
                       <div className="space-y-4">
-                        <span className="text-xs uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
+                        <span className="text-md uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
                         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">احجزي ليلة العمر لتبدو مذهلة.</h2>
                       </div>
                       <p className="text-brand-200 font-light text-base leading-relaxed">
@@ -718,6 +730,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
                             <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/tiktoklogo.jpg" alt="TikTok" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب التيك توك</p>
+                            <a href="https://www.tiktok.com/@iu33__?_r=1&_t=ZS-97i2Doy3VnJ" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33__</a>
                           </div>
                         </div>
                       </div>
@@ -788,15 +809,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   onChange={handleFormChange}
                                   className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-md transition-colors"
                                 >
-                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
-                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
-                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)</option>
+                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات</option>
+                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات</option>
+                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات</option>
                                   <option value="photography">باقة مصورة جوال</option>
                                 </select>
                               </div>
                             </div>
 
-                            <div className="space-y-2 text-left">
+                            <div className="space-y-2 text-right">
                               <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-brand-300">تفاصيل إضافية حول القاعة والزفة ورؤيتكم</label>
                               <textarea 
                                 id="message"
@@ -897,7 +918,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                         <div key={idx} className="bg-brand-50 rounded-2xl p-5 border border-brand-200 hover:border-brand-400 transition-all hover:shadow-sm text-right space-y-2">
                           <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-md">✚</div>
                           <h4 className="font-bold text-brand-900 text-md sm:text-base">{item.name}</h4>
-                          <p className="text-sm sm:text-md text-brand-600 leading-normal font-light">{item.desc}</p>
+                          <p className="text-md text-brand-600 leading-normal font-light">{item.desc}</p>
                         </div>
                       ))}
                       <div className="bg-brand-800 text-brand-50 rounded-2xl p-5 flex flex-col justify-between text-right space-y-4 shadow border border-brand-700">
@@ -934,7 +955,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     {/* Left text */}
                     <div className="lg:col-span-5 text-right space-y-8">
                       <div className="space-y-4">
-                        <span className="text-xs uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
+                        <span className="text-md uppercase tracking-widest text-brand-300 font-bold">ابدأ التنسيق الآن</span>
                         <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">احجزي ليلة العمر لتبدو مذهلة.</h2>
                       </div>
                       <p className="text-brand-200 font-light text-base leading-relaxed">
@@ -967,6 +988,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                           <div>
                             <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب السناب شات والتغطية</p>
                             <a href="https://www.snapchat.com/add/iuu33_3" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iuu33_3</a>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 justify-start">
+                          <div className="w-11 h-11 rounded-full bg-brand-900 flex items-center justify-center border border-brand-800 overflow-hidden">
+                            <img src="/tiktoklogo.jpg" alt="TikTok" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <p className="text-[10px] uppercase tracking-widest text-brand-400 font-bold">حساب التيك توك</p>
+                            <a href="https://www.tiktok.com/@iu33__?_r=1&_t=ZS-97i2Doy3VnJ" target="_blank" rel="noopener noreferrer" className="text-md sm:text-base font-bold hover:text-brand-300 transition-colors" dir="ltr">iu33__</a>
                           </div>
                         </div>
                       </div>
@@ -1037,15 +1067,15 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   onChange={handleFormChange}
                                   className="w-full px-4 py-3 bg-brand-950 border border-brand-800 rounded-xl focus:border-brand-400 focus:outline-none text-brand-50 text-md transition-colors"
                                 >
-                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات (٣٥٠ ريال)</option>
-                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات (٥٠٠ ريال)</option>
-                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات (٥٥٠ ريال)</option>
+                                  <option value="bride_6">وصيفة عروسة - باقة ٦ ساعات</option>
+                                  <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات</option>
+                                  <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات</option>
                                   <option value="photography">باقة مصورة جوال</option>
                                 </select>
                               </div>
                             </div>
 
-                            <div className="space-y-2 text-left">
+                            <div className="space-y-2 text-right">
                               <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-brand-300">تفاصيل إضافية حول القاعة والزفة ورؤيتكم</label>
                               <textarea 
                                 id="message"
