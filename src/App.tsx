@@ -461,8 +461,64 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
               </div>
 
             </div>
-                            {/* Consultation / Booking Form */}
-              <section id="contact" className="py-24 bg-brand-950 text-brand-50 relative overflow-hidden">
+
+            {/* Details & Gallery Section */}
+            <section className="py-24 bg-brand-100/30 border-t border-b border-brand-200/40">
+              <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                  <span className="text-xs sm:text-md uppercase tracking-[0.25em] text-brand-500 font-bold">
+                    تفاصيل تُصنع بحب
+                  </span>
+                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-brand-950">
+                    أناقة كواليسنا في ليلة العمر
+                  </h2>
+                  <p className="text-brand-750 font-light text-md">
+                    نهتم بأدق تفاصيل تحضيراتك وإطلالتك لتبدئي رحلة العمر بأبهى حُلّة وأسعد اللحظات.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                  {/* Card 1: img1.jpeg (Veil & Shoes) */}
+                  <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-brand-200/50 flex flex-col justify-between">
+                    <div className="overflow-hidden aspect-[4/5] relative">
+                      <img 
+                        src="/img1.jpeg" 
+                        alt="Wedding Veil and Heels" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div className="p-6 text-right space-y-2">
+                      <h3 className="font-serif text-xl font-bold text-brand-900">حكاية الليلة الأولى</h3>
+                      <p className="text-md text-brand-700 font-light leading-relaxed">
+                        تفاصيل التحضيرات الفاخرة، فستانك الأبيض وحذاء زفافكِ المختار بعناية، نجهزه لكِ بكل حب وجاذبية لتكوني أميرة ليلتك.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card 2: img2.jpeg (Bride holding Jimmy Choo shoes) */}
+                  <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-brand-200/50 flex flex-col justify-between">
+                    <div className="overflow-hidden aspect-[4/5] relative">
+                      <img 
+                        src="/img2.jpeg" 
+                        alt="Bride holding heels" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div className="p-6 text-right space-y-2">
+                      <h3 className="font-serif text-xl font-bold text-brand-900">اللمسات الراقية</h3>
+                      <p className="text-md text-brand-700 font-light leading-relaxed">
+                        مرافقة خاصة وخدمة مساعدة العروسة والاهتمام بكل تفاصيل طلتك، لنمنحكِ الطمأنينة وراحة البال في أسعد لياليكِ.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Consultation / Booking Form */}
+            <section id="contact" className="py-24 bg-brand-950 text-brand-50 relative overflow-hidden">
                 <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-brand-800/10 blur-3xl -translate-y-1/2"></div>
                 <div className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full bg-brand-900/15 blur-3xl translate-y-1/2"></div>
 
