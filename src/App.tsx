@@ -90,6 +90,26 @@ function App() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
         </svg>
       )
+    },
+    {
+      title: "تأجير منيكان فستان الزفاف",
+      description: "لأن تفاصيل العرض تصنع الفرق، نوفر خدمة تأجير منيكان أنيق وعالي الجودة لإبراز فستانك بأفضل صورة وبلمسة راقية وجذابة.",
+      price: "150 ﷼",
+      pdfPath: "",
+      features: [
+        "منيكان أنيق وعالي الجودة مخصص لفساتين الأعراس الفخمة",
+        "تصميم مثالي يبرز تفاصيل التطريز وقصة الفستان كاملة",
+        "يسهل على المصورة التقاط لقطات جمالية وتفصيلية للفستان قبل لبسه",
+        "خدمة توصيل واستلام مرنة ومباشرة من وإلى القاعة"
+      ],
+      icon: (
+        <svg className="w-6 h-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6a2 2 0 11-4 0c0-1.1.9-2 2-2s2 .9 2 2v2" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 10l6-3 6 3" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 10l1 7h6l1-7" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 17v4m-3 0h6" />
+        </svg>
+      )
     }
   ];
 
@@ -189,7 +209,8 @@ function App() {
       bride_6: "وصيفة عروسة - باقة ٦ ساعات",
       bride_10: "وصيفة عروسة - باقة ١٠ ساعات",
       family_10: "وصيفة أهل عريس - باقة ١٠ ساعات",
-      photography: "باقة مصورة جوال"
+      photography: "باقة مصورة جوال",
+      mannequin: "خدمة تأجير منيكان فستان الزفاف"
     };
     
     const chosenService = serviceNames[contactForm.serviceType] || contactForm.serviceType;
@@ -643,6 +664,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات</option>
                                   <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات</option>
                                   <option value="photography">باقة مصورة جوال</option>
+                                  <option value="mannequin">خدمة تأجير منيكان فستان الزفاف (١٥٠ ﷼)</option>
                                 </select>
                               </div>
                             </div>
@@ -686,11 +708,18 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                 <p className="text-brand-700 font-light text-md">اضغط على أي باقة لفتح ملف الـ PDF الأصلي والاطلاع على التفاصيل الرسمية.</p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 lg:gap-12 items-stretch">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
                 {services.map((service, index) => (
                   <div 
                     key={index} 
-                    className="bg-brand-50 rounded-3xl p-8 border border-brand-200 hover:border-brand-400 transition-all duration-300 hover:shadow-lg flex flex-col justify-between text-right space-y-6"
+                    className={`bg-brand-50 rounded-3xl p-8 border border-brand-200 hover:border-brand-400 transition-all duration-300 hover:shadow-lg flex flex-col justify-between text-right space-y-6 ${
+                      service.pdfPath ? 'cursor-pointer' : ''
+                    }`}
+                    onClick={() => {
+                      if (service.pdfPath) {
+                        window.open(service.pdfPath, '_blank');
+                      }
+                    }}
                   >
                     <div className="space-y-4">
                       {/* Service Icon */}
@@ -869,6 +898,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات</option>
                                   <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات</option>
                                   <option value="photography">باقة مصورة جوال</option>
+                                  <option value="mannequin">خدمة تأجير منيكان فستان الزفاف (١٥٠ ﷼)</option>
                                 </select>
                               </div>
                             </div>
@@ -1127,6 +1157,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                                   <option value="bride_10">وصيفة عروسة - باقة ١٠ ساعات</option>
                                   <option value="family_10">وصيفة أهل عريس - باقة ١٠ ساعات</option>
                                   <option value="photography">باقة مصورة جوال</option>
+                                  <option value="mannequin">خدمة تأجير منيكان فستان الزفاف (١٥٠ ﷼)</option>
                                 </select>
                               </div>
                             </div>
