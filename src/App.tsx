@@ -380,7 +380,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                     <div className="relative group max-w-[380px] md:max-w-full rounded-3xl overflow-hidden shadow-2xl border border-brand-200/60 p-2 bg-white transition-all duration-300 hover:shadow-brand-200">
                       <div className="rounded-2xl overflow-hidden aspect-[3/5] relative">
                         <img 
-                          src="/wedding.jpeg" 
+                          src="/img1.jpeg" 
                           alt="SL Team Wedding" 
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                         />
@@ -484,6 +484,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
             </div>
 
             {/* Details & Gallery Section */}
+            {false && (
             <section className="py-24 bg-brand-100/30 border-t border-b border-brand-200/40">
               <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
@@ -537,6 +538,7 @@ ${contactForm.message ? `- تفاصيل إضافية: ${contactForm.message}` : 
                 </div>
               </div>
             </section>
+            )}
 
             {/* Consultation / Booking Form */}
             <section id="contact" className="py-24 bg-brand-950 text-brand-50 relative overflow-hidden">
